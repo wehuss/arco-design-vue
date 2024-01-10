@@ -13,6 +13,7 @@
     :arrow-style="arrowStyle"
     animation-name="zoom-in-fade-out"
     auto-fit-transform-origin
+    v-bind="$props"
     @popup-visible-change="handlePopupVisibleChange"
   >
     <slot />
@@ -77,6 +78,7 @@ export default defineComponent({
     IconExclamationCircleFill,
     IconCloseCircleFill,
   },
+  extends: Trigger,
   props: {
     /**
      * @zh 内容

@@ -14,6 +14,7 @@
     animation-name="zoom-in-fade-out"
     auto-fit-transform-origin
     role="tooltip"
+    v-bind="$props"
     @popup-visible-change="handlePopupVisibleChange"
   >
     <slot />
@@ -36,6 +37,7 @@ export default defineComponent({
   components: {
     Trigger,
   },
+  extends: Trigger,
   props: {
     /**
      * @zh 文字气泡是否可见
@@ -116,9 +118,7 @@ export default defineComponent({
      * @en Mount container for popup
      */
     popupContainer: {
-      type: [String, Object] as PropType<
-        string | HTMLElement | null | undefined
-      >,
+      type: [String, Object] as PropType<string | HTMLElement | undefined>,
     },
   },
   emits: {

@@ -8,6 +8,7 @@
     :popup-offset="4"
     :popup-container="popupContainer"
     :opened-class="`${prefixCls}-open`"
+    v-bind="$props"
     @popup-visible-change="handlePopupVisibleChange"
   >
     <slot />
@@ -38,6 +39,7 @@ export default defineComponent({
     Trigger,
     DropdownPanel,
   },
+  extends: Trigger,
   props: {
     /**
      * @zh 弹出框是否可见
